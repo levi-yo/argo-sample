@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-sample-deployment
+  labels:
+    app: argo-sample-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: argo-sample-web
+  template:
+    metadata:
+      labels:
+        app: argo-sample-web
+    spec:
+      containers:
+      - name: web-app
+        image: 1223yys/argo-sample-web:0.1.1
+        ports:
+        - containerPort: 7070

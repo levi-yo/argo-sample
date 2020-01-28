@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress-sample
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: levi.local.com
+    http:
+      paths:
+        - path: /app
+          backend:
+            serviceName: argo-sample-service
+            servicePort: 80
