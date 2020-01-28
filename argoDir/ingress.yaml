@@ -9,7 +9,7 @@ spec:
   - host: levi.local.com
     http:
       paths:
-        - path: /app
+        - path: /
           backend:
             serviceName: argo-sample-service
             servicePort: 80
