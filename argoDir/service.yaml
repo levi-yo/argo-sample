@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: argo-sample-service
 spec:
+  type: NodePort
   selector:
     app: argo-sample-web
   ports:
